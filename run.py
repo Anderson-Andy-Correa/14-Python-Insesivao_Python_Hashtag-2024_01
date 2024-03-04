@@ -22,7 +22,12 @@ auto.write(LINK)
 auto.press('enter')
 
 # Dar uma pausa um pouco maior
-sleep(3)
+sleep(5)
 
 # Passo: 2 Fazer Login
-
+auto.click(x=719, y=442)
+auto.write('pythonimpressionador@gmail.com')
+auto.press('tab')
+auto.write('sua senha aqui')
+auto.press('tab')
+auto.press('enter')
