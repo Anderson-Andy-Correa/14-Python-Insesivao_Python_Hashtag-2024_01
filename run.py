@@ -24,7 +24,7 @@ auto.write(LINK)
 auto.press('enter')
 
 # Dar uma pausa um pouco maior
-sleep(5)
+sleep(6)
 
 # Passo: 2 Fazer Login
 auto.click(x=719, y=442)
@@ -46,6 +46,42 @@ import pandas
 tabela = pandas.read_csv('produtos.csv')
 print(tabela)
 
-
 # Passo 4: Cadastrar 1 Produto
+# Para cada linha da minha tabela
+
+for linha in tabela.index:
+    # Clicar no 1º campo
+    auto.click(x=749, y=308)
+
+    # Codigo do Produto
+    auto.write('Código')
+    auto.press('tab')
+
+    # Marca
+    auto.write('Marca')
+    auto.press('tab')
+
+    # Tipo
+    auto.write('Tipo')
+    auto.press('tab')
+
+    # Categoria
+    auto.write('Categoria')
+    auto.press('tab')
+
+    # preco
+    auto.write('Preco')
+    auto.press('tab')
+
+    # custo
+    auto.write('Custo')
+    auto.press('tab')
+
+    # Obs
+    auto.write('Obs')
+    auto.press('tab')
+
+    # Enviar
+    auto.press('enter')
+
 # Passo 5: Repetir o processo de cadastro até acabar
