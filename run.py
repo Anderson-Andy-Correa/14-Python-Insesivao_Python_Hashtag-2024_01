@@ -54,34 +54,37 @@ for linha in tabela.index:
     auto.click(x=749, y=308)
 
     # Codigo do Produto
-    auto.write('Código')
+    auto.write(tabela.loc[linha, 'codigo'])
     auto.press('tab')
 
     # Marca
-    auto.write('Marca')
+    auto.write(tabela.loc[linha, 'marca'])
     auto.press('tab')
 
     # Tipo
-    auto.write('Tipo')
+    auto.write(tabela.loc[linha, 'tipo'])
     auto.press('tab')
 
     # Categoria
-    auto.write('Categoria')
+    auto.write(str(tabela.loc[linha, 'categoria']))
     auto.press('tab')
 
     # preco
-    auto.write('Preco')
+    auto.write(str(tabela.loc[linha, 'preco_unitario']))
     auto.press('tab')
 
     # custo
-    auto.write('Custo')
+    auto.write(str(tabela.loc[linha, 'custo']))
     auto.press('tab')
 
     # Obs
-    auto.write('Obs')
+    auto.write(tabela.loc[linha, 'obs'])
     auto.press('tab')
 
     # Enviar
     auto.press('enter')
+
+    # Voltar ao início
+    auto.press('home')
 
 # Passo 5: Repetir o processo de cadastro até acabar
