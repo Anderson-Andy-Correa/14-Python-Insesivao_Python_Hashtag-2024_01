@@ -78,7 +78,9 @@ for linha in tabela.index:
     auto.press('tab')
 
     # Obs
-    auto.write(tabela.loc[linha, 'obs'])
+    obs = tabela.loc[linha, 'obs']
+    if not pandas.isna(obs):
+        auto.write(obs)
     auto.press('tab')
 
     # Enviar
