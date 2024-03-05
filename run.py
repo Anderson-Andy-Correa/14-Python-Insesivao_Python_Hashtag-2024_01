@@ -27,7 +27,7 @@ auto.press('enter')
 sleep(6)
 
 # Passo: 2 Fazer Login
-auto.click(x=719, y=442)
+auto.press('tab')
 auto.write('pythonimpressionador@gmail.com')
 
 # Escrever a senha
@@ -49,40 +49,17 @@ print(tabela)
 # Passo 4: Cadastrar 1 Produto
 # Para cada linha da minha tabela
 
+colunas = tuple(tabela.columns)
 for linha in tabela.index:
     # Clicar no 1º campo
-    auto.click(x=749, y=308)
+    auto.click(x=724, y=339)
 
-    # Codigo do Produto
-    auto.write(tabela.loc[linha, 'codigo'])
-    auto.press('tab')
-
-    # Marca
-    auto.write(tabela.loc[linha, 'marca'])
-    auto.press('tab')
-
-    # Tipo
-    auto.write(tabela.loc[linha, 'tipo'])
-    auto.press('tab')
-
-    # Categoria
-    auto.write(str(tabela.loc[linha, 'categoria']))
-    auto.press('tab')
-
-    # preco
-    auto.write(str(tabela.loc[linha, 'preco_unitario']))
-    auto.press('tab')
-
-    # custo
-    auto.write(str(tabela.loc[linha, 'custo']))
-    auto.press('tab')
-
-    # Obs
-    obs = tabela.loc[linha, 'obs']
-    if not pandas.isna(obs):
-        auto.write(obs)
-    auto.press('tab')
-
+    for coluna in colunas:
+        campo = tabela.loc[linha, coluna]
+        if not pandas.isna(campo):
+            auto.write(str(campo))
+        auto.press('tab')
+        
     # Enviar
     auto.press('enter')
 
