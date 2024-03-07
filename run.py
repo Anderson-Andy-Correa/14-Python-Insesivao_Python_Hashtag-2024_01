@@ -43,7 +43,7 @@ auto.press('enter')
 # leitor de pdf tabula
 
 import pandas
-tabela = pandas.read_csv('produtos.csv')
+tabela = pandas.read_csv('documentos/produtos.csv')
 print(tabela)
 
 # Passo 4: Cadastrar 1 Produto
